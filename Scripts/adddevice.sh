@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # Name: adddevice.sh
 # Purpuse: add request URI to config file
 # Creator: Mikael Ottosson, Enabletec AB

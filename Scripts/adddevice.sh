@@ -12,7 +12,7 @@ APACHEBIN=httpd
 ########################################################
 # Functions
 
-getMacAddress() {
+function getMacAddress() {
 	if [ -z "$1" ]
   		then
 		echo "This is a script for adding one device to the filter. This script needs to have a valid input parameter."
@@ -25,7 +25,7 @@ getMacAddress() {
 	fi	
 }
 
-stringBuilder() {
+function stringBuilder() {
 	if [ $inputcheck == 1 ]
 		then
 		string=`SetEnvIf Request_URI ^"$1" allow` # allow needs to be added in Deny, Allow section in httpd.conf.
@@ -33,7 +33,7 @@ stringBuilder() {
 	fi
 }
 
-reloadService() {
+function reloadService() {
 	if [ inputcheck == 1 ]
 		/etc/init.d/$APACHEBIN graceful # Service Reload.
 		sleep 5
@@ -41,7 +41,7 @@ reloadService() {
 	fi
 }
 
-errorCheck() {
+function errorCheck() {
 	if [ inputcheck != 1 ]
 		then
 	else
